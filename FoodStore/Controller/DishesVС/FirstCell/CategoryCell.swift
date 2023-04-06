@@ -10,32 +10,30 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
     
-    // MARK: - Properties
+    // MARK: - Property
     
     static let reuseIdentifier = "CategoryCell"
     
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        label.textColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.00)
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    private let titleLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
+        setupView ()
     }
     
-    func setSelection(_ isSelected: Bool) {
-        if isSelected {
-            backgroundColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.00)
-            titleLabel.textColor = .white
-        } else {
-            backgroundColor = .clear
-            titleLabel.textColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.00)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                contentView.backgroundColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.00)
+                titleLabel.textColor = .white
+            } else {
+                contentView.backgroundColor = .clear
+                titleLabel.textColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.00)
+            }
         }
     }
     
@@ -43,26 +41,28 @@ class CategoryCell: UICollectionViewCell {
         titleLabel.text = string
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Private Methods
     
-    private func setupViews() {
-        addSubview(titleLabel)
-        backgroundColor = .clear
-        clipsToBounds = true
-        layer.borderWidth = 1
-        layer.borderColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.00).cgColor
-        layer.cornerRadius = 15
+    private func setupView () {
+        
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        titleLabel.textColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.00)
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 1
+        
+        contentView.layer.cornerRadius = 15
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.00).cgColor
+        contentView.backgroundColor = UIColor.clear
+        contentView.addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
 }

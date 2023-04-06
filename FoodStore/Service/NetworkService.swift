@@ -55,7 +55,7 @@ class RecipeNetworkService: RecipeNetworkServiceProtocol {
         components.host = "api.spoonacular.com"
         components.path = "/recipes/complexSearch"
         components.queryItems = [
-            URLQueryItem(name: "apiKey", value: "4ea5853dc94c40a296c7ac12e7fe5eb4"),
+            URLQueryItem(name: "apiKey", value: "37f723dc553444e88435a44768859ae4"),
             URLQueryItem(name: "query", value: category)
         ]
         return components.url

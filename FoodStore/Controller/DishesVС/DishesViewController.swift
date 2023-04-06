@@ -42,12 +42,12 @@ class DishesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.fetchRecipes()
-        layout()
+        setLayout()
     }
     
     // MARK: - Private Methods
     
-    private func layout() {
+    private func setLayout() {
         view.addSubview(locationLabel)
         view.addSubview(collectionView)
         view.backgroundColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.0)
@@ -57,7 +57,7 @@ class DishesViewController: UIViewController {
             locationLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 22),
             locationLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             
-            collectionView.topAnchor.constraint(equalTo: locationLabel.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 27),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -200,7 +200,7 @@ extension DishesViewController {
         group.interItemSpacing = .fixed(10) // Set inter item spacing to 10 pixels
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
         section.orthogonalScrollingBehavior = .continuous
         
         let boundarySupplementarySize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(20))

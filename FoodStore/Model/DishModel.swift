@@ -16,5 +16,3 @@ struct RecipeResult: Decodable {
     let title: String
     let image: String
 }
-
-

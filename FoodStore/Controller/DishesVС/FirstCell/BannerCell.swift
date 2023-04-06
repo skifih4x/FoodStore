@@ -16,6 +16,10 @@ class BannerCell: UICollectionViewCell {
         super.init(frame: frame)
         setupViews()
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     func configure(with info: Any?) {
         guard let image = info as? UIImage else {
@@ -24,16 +28,10 @@ class BannerCell: UICollectionViewCell {
         imageView.image = image
     }
 
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Private Methods
     
     private func setupViews() {
-        imageView.contentMode = .scaleToFill
-        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         contentView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -45,4 +43,3 @@ class BannerCell: UICollectionViewCell {
         ])
     }
 }
-
