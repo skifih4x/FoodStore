@@ -201,11 +201,11 @@ extension DishesViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
-        section.orthogonalScrollingBehavior = .continuous
         
         let boundarySupplementarySize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(20))
         let boundarySupplementaryItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: boundarySupplementarySize, elementKind: "category-dish-boundary", alignment: .top)
         section.boundarySupplementaryItems = [boundarySupplementaryItem]
+        section.orthogonalScrollingBehavior = .continuous
         
         return section
     }

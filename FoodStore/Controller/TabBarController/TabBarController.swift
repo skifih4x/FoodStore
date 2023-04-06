@@ -23,5 +23,11 @@ class TabBarController: UITabBarController {
         tabBar.tintColor = UIColor(red: 0.99, green: 0.23, blue: 0.41, alpha: 1.0)
         tabBar.backgroundColor = .white
         tabBar.isTranslucent = false
+        dishesVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "menu"), tag: 0)
+        contactVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "contact"), tag: 1)
+        profileVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "profile"), tag: 2)
+        basketVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "badge"), tag: 3)
+
+        self.viewControllers = [dishesVC, contactVC, profileVC, basketVC]
     }
 }
