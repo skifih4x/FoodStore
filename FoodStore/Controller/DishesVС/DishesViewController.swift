@@ -71,7 +71,7 @@ class DishesViewController: UIViewController {
 extension DishesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            let category = presenter.a(row: indexPath.row)
+            let category = presenter.categoryArray(row: indexPath.row)
             let indexes = presenter.indexesOfRecipes(forCategory: category)
             
             if let firstIndex = indexes.first {
@@ -126,7 +126,7 @@ extension DishesViewController: UICollectionViewDataSource {
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifier, for: indexPath) as! CategoryCell
-            let category = presenter.a(row: indexPath.item)
+            let category = presenter.categoryArray(row: indexPath.item)
             cell.configure(category)
             cell.tag = indexPath.item
             return cell

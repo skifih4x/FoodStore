@@ -1,5 +1,5 @@
 //
-//  Presenter.swift
+//  RecipeListPresenter.swift
 //  FoodStore
 //
 //  Created by Артем Орлов on 03.04.2023.
@@ -11,7 +11,7 @@ protocol RecipeListPresenterProtocol: AnyObject {
     func fetchRecipes()
     func numberOfCategories() -> Int
     func numberOfDishes() -> Int
-    func a(row: Int) -> String
+    func categoryArray(row: Int) -> String
     func fetchSelectedCategoryRecipes(forCategory category: String)
     var selectedCategoryRecipes: [RecipeResult] { get }
     func indexesOfRecipes(forCategory category: String) -> [Int]
@@ -32,7 +32,7 @@ class RecipeListPresenter: RecipeListPresenterProtocol {
         self.networkService = networkService
     }
     
-    func a(row: Int) -> String {
+    func categoryArray(row: Int) -> String {
         categories[row]
     }
     var selectedCategoryRecipes: [RecipeResult] = []

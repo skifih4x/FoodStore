@@ -22,7 +22,7 @@
 		0088F3BC29DB496A003398A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0088F3BB29DB496A003398A8 /* Assets.xcassets */; };
 		0088F3BF29DB496A003398A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0088F3BD29DB496A003398A8 /* LaunchScreen.storyboard */; };
 		0088F3C929DB49CC003398A8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0088F3C829DB49CC003398A8 /* NetworkService.swift */; };
-		0088F3CB29DB49E0003398A8 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0088F3CA29DB49E0003398A8 /* Presenter.swift */; };
+		0088F3CB29DB49E0003398A8 /* RecipeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0088F3CA29DB49E0003398A8 /* RecipeListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,7 @@
 		0088F3BE29DB496A003398A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0088F3C029DB496A003398A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0088F3C829DB49CC003398A8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		0088F3CA29DB49E0003398A8 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		0088F3CA29DB49E0003398A8 /* RecipeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				0088F3B629DB4969003398A8 /* DishesViewController.swift */,
-				0088F3CA29DB49E0003398A8 /* Presenter.swift */,
+				0088F3CA29DB49E0003398A8 /* RecipeListPresenter.swift */,
 				007E50D129DC659C00CC9716 /* FirstCell */,
 			);
 			path = "DishesVС";
@@ -263,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0088F3CB29DB49E0003398A8 /* Presenter.swift in Sources */,
+				0088F3CB29DB49E0003398A8 /* RecipeListPresenter.swift in Sources */,
 				007E50D529DC676B00CC9716 /* DishCell.swift in Sources */,
 				007E510E29DED72200CC9716 /* BasketViewController.swift in Sources */,
 				007E510229DED61400CC9716 /* TabBarController.swift in Sources */,
